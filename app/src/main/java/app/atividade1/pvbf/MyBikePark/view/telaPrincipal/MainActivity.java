@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,10 +36,13 @@ public class MainActivity extends AppCompatActivity
     NavigationView navigationView;
 
     Menu menu;
-
-    MenuItem nav_CollapsingToolbarLayout;
+    //para controlar os itens do menu
+    MenuItem nav_ListaRiders;
+    MenuItem nav_ImportanciaDaBike;
     MenuItem nav_adicionar_parque;
     MenuItem nav_lista_parque;
+
+
     ClienteORM clienteORM;
     ClienteORMController clienteORMController;
     TextView txtNomeUserNoMenu;
@@ -54,11 +58,14 @@ public class MainActivity extends AppCompatActivity
         id = bundle.getInt("id");
         Log.d(null, "Nome:" + bundle.getString("id") + id);
 
-       // initFormulario();
-       // clienteORM.setId(id);
-       // clienteORM=clienteORMController.getById(clienteORM);
 
-      //  txtNomeUserNoMenu.setText("ok");
+
+        ////busca o cliente logado
+        buscarCliente(id);
+
+
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -86,6 +93,18 @@ public class MainActivity extends AppCompatActivity
 
         fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesFragment()).commit();
 
+    }
+
+    private ClienteORM buscarCliente(int id) {
+        ClienteORM obj=new ClienteORM();
+        clienteORMController =new ClienteORMController();
+        obj.setId(id);
+
+        obj=clienteORMController.getById(obj);
+
+
+
+        return obj;
     }
 
     private void initFormulario() {
@@ -130,34 +149,57 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
+    //metodo MenuItem
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
-        if (id == R.id.nav_listar_clientes_cards) {
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment,
-                    new ListarClientesCardsFragment()).commit();
+
+        int id = item.getItemId();
+
+
+        //TODO: Obter ID para a opcao selecionada no MENU DRAWER
+        if (id == R.id.nav_listar_clientes_cards) {
+            menu=navigationView.getMenu();
+            nav_ListaRiders =menu.findItem(R.id.nav_listar_clientes_cards);
+
+
+
+
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesCardsFragment()).commit();
 
 
         } else if (id == R.id.nav_ImportanciaDabike) {
+            menu=navigationView.getMenu();
+            nav_ImportanciaDaBike=menu.findItem(R.id.nav_ImportanciaDabike);
 
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment,
-                    new ModeloFragmentListaRiders()).commit();
+
+
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloFragmentListaRiders()).commit();
 
         } else if (id == R.id.nav_adicionar_parque) {
+            menu=navigationView.getMenu();
+            nav_adicionar_parque=menu.findItem(R.id.nav_adicionar_parque);
 
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarParqueFragment()).commit();
 
         } else if (id == R.id.nav_lista_parque) {
+            menu=navigationView.getMenu();
+            nav_lista_parque=menu.findItem(R.id.nav_lista_parque);
 
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListaDeParquesFragmentoRecyclerView()).commit();
 
-        }
+        }else if(id == R.id.txtNomeUser){
+            //headerLayout=navigationView.getHeaderCount();
+            //txtNomeUser
 
+
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

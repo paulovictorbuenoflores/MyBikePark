@@ -74,7 +74,19 @@ public class ClienteORMController implements ICrud<ClienteORM> {
 
     @Override
     public ClienteORM getById(ClienteORM obj) {
-        return null;
+
+        Realm realm = Realm.getDefaultInstance();
+
+        try{
+            obj= realm.copyFromRealm(Objects.requireNonNull(realm.where(ClienteORM.class)).equalTo("id", obj.getId()).findFirst());
+
+        }catch (Exception e){
+            Log.e("db_log", "Erro ao execultar getByID: "+e.getMessage());
+
+        }
+        return obj;
+
+
     }
 
 

@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -149,22 +150,44 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        int id = item.getItemId();
-
+        int itemId = item.getItemId();
+        clienteORM=buscarCliente(id);
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_perfil) {
+        if (itemId == R.id.action_perfil) {
 
-            Intent intent = new Intent(MainActivity.this, MeusDadosActivity.class);
-            startActivity(intent);
-            finish();
+
+
+
+
+
+
+            //Fragment myFrag = new Fragment();
+            //Bundle bundle = new Bundle();
+            //bundle.putInt("id", id);
+
+           // myFrag.setArguments(bundle);
+            //fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment,  new MeusDados()).commit();
+
+
+
+
+
+
+
+
+
+
             Toast.makeText(getApplicationContext(), "Meu Perfil", Toast.LENGTH_SHORT).show();
             return true;
-        }else if (id == R.id.action_alterarDados) {
+        }
+        else if (itemId == R.id.action_alterarDados) {
             Intent intent = new Intent(MainActivity.this, AtualizarMeusDadosActivity.class);
             startActivity(intent);
             finish();
             return true;
-        }else if(id==R.id.action_ExcluirConta){
+        }
+        else if(itemId==R.id.action_ExcluirConta){
             new FancyAlertDialog.Builder(MainActivity.this)
                     .setTitle("Excluir Conta")
                     .setBackgroundColor(Color.parseColor("#303F9F"))  //Don't pass R.color.colorvalue
@@ -200,9 +223,36 @@ public class MainActivity extends AppCompatActivity
                     })
                     .build();
 
-        }else if (id == R.id.action_settings) {
-            finish();
-            return true;
+        }
+        else if (itemId == R.id.action_settings) {
+            new FancyAlertDialog.Builder(MainActivity.this)
+                    .setTitle("Sair Do Aplicativo")
+                    .setBackgroundColor(Color.parseColor("#303F9F"))  //Don't pass R.color.colorvalue
+                    .setMessage("Deseja realmente sair ?")
+                    .setNegativeBtnText("Retornar")
+                    .setPositiveBtnBackground(Color.parseColor("#FF4081"))  //Don't pass R.color.colorvalue
+                    .setPositiveBtnText("Sim")
+                    .setNegativeBtnBackground(Color.parseColor("#FFA9A7A8"))  //Don't pass R.color.colorvalue
+                    .setAnimation(Animation.POP)
+                    .isCancellable(true)
+                    .setIcon(R.drawable.ic_star_border_black_24dp, Icon.Visible)
+                    .OnPositiveClicked(new FancyAlertDialogListener() {
+                        @Override
+                        public void OnClick() {
+                            Toast.makeText(getApplicationContext(), clienteORM.getPrimeiroNome() + ", volte sempre e obrigado...", Toast.LENGTH_LONG).show();
+                            //isLoginAutomatico = false;
+                            //salvarSharedPreferences();
+                            finish();
+                            return;
+                        }
+                    })
+                    .OnNegativeClicked(new FancyAlertDialogListener() {
+                        @Override
+                        public void OnClick() {
+                            Toast.makeText(getApplicationContext(), clienteORM.getPrimeiroNome() + ", divirta-se com as opções do aplicativo...", Toast.LENGTH_LONG).show();
+                        }
+                    })
+                    .build();
         }
 
         return super.onOptionsItemSelected(item);
@@ -255,7 +305,8 @@ public class MainActivity extends AppCompatActivity
 
         }else if(id == R.id.txtNomeUser){
             //headerLayout=navigationView.getHeaderCount();
-            //txtNomeUser
+            txtNomeUserNoMenu=findViewById(R.id.txtNomeUser);
+            txtNomeUserNoMenu.setText("t");
 
 
         }
@@ -265,67 +316,13 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-
+//TODO: IMPLEMENTAR TODOS OS MAP
     //bt map mostrar todos os parques no mapa
     public void todosOsParques(View view) {
 
 
     }
 
-   /* @Override
-    public View onCreateView(LinearLayout inflater, ViewGroup container, Bundle savedInstanceState){
-    View v = inflater.inflate(R.layout.fragment_popup_menu, container, false);
-
-    Button buttonPopup v.findViewById(R.id.btnPopup);
-    buttonPopup.setOnClickListener(new View.onClickListener(){
-    @Override
-    public void onClick(View view){
-
-    }
 
 
-    });
-    }*/
-   public void excluirMinhaConta(View view) {
-       new FancyAlertDialog.Builder(MainActivity.this)
-               .setTitle("Excluir Conta")
-               .setBackgroundColor(Color.parseColor("#303F9F"))  //Don't pass R.color.colorvalue
-               .setMessage("Deseja realmente Excluir ?")
-               .setNegativeBtnText("Não")
-               .setPositiveBtnBackground(Color.parseColor("#FF4081"))  //Don't pass R.color.colorvalue
-               .setPositiveBtnText("Sim")
-               .setNegativeBtnBackground(Color.parseColor("#FFA9A7A8"))  //Don't pass R.color.colorvalue
-               .setAnimation(Animation.POP)
-               .isCancellable(true)
-               .setIcon(R.drawable.ic_star_border_black_24dp, Icon.Visible)
-               .OnPositiveClicked(new FancyAlertDialogListener() {
-                   @Override
-                   public void OnClick() {
-
-
-                       clienteORMController.deletar(clienteORM);
-
-
-
-                       Toast.makeText(getApplicationContext(), clienteORM.getPrimeiroNome() + ", volte sempre e obrigado...", Toast.LENGTH_LONG).show();
-                       //isLoginAutomatico = false;
-                     //  salvarSharedPreferences();
-                       finish();
-                       return;
-                   }
-               })
-               .OnNegativeClicked(new FancyAlertDialogListener() {
-                   @Override
-                   public void OnClick() {
-                       Toast.makeText(getApplicationContext(), clienteORM.getPrimeiroNome() + ", divirta-se com as opções do aplicativo...", Toast.LENGTH_LONG).show();
-                   }
-               })
-               .build();
-   }
-    public void meusDados(View view) {
-
-        Intent intent = new Intent(MainActivity.this, MeusDadosActivity.class);
-        startActivity(intent);
-        finish();
-    }
 }

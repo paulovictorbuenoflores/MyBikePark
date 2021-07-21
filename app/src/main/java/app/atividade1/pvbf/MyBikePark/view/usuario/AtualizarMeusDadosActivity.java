@@ -24,6 +24,7 @@ import app.atividade1.pvbf.MyBikePark.api.AppUtil;
 import app.atividade1.pvbf.MyBikePark.controller.ClienteController;
 import app.atividade1.pvbf.MyBikePark.model.Cliente;
 import app.atividade1.pvbf.MyBikePark.view.Main02Activity;
+import app.atividade1.pvbf.MyBikePark.view.telaPrincipal.MainActivity;
 
 public class AtualizarMeusDadosActivity extends AppCompatActivity {
     Button btVoltar;
@@ -106,7 +107,7 @@ public class AtualizarMeusDadosActivity extends AppCompatActivity {
         checkBoxTermoMydb = findViewById(R.id.checkBoxTermoMydb);
         checkBoxTermo = findViewById(R.id.checkBoxTermoMydb);
         ////////////////
-        btVoltar = findViewById(R.id.btVoltarMeusDados);
+       // btVoltar = findViewById(R.id.btVoltarMeusDados);
 
         controller = new ClienteController(this);
 
@@ -153,7 +154,7 @@ public class AtualizarMeusDadosActivity extends AppCompatActivity {
                     .OnPositiveClicked(new FancyAlertDialogListener() {
                         @Override
                         public void OnClick() {
-                            Intent intent = new Intent(AtualizarMeusDadosActivity.this, MenuUserActivity.class);
+                            Intent intent = new Intent(AtualizarMeusDadosActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
                             return;
@@ -166,7 +167,7 @@ public class AtualizarMeusDadosActivity extends AppCompatActivity {
     }
 
     public void voltar(View view) {
-        Intent intent = new Intent(AtualizarMeusDadosActivity.this, MenuUserActivity.class);
+        Intent intent = new Intent(AtualizarMeusDadosActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
         return;

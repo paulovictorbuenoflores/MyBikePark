@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.usuario.ClienteVipActivity">
+
+    <TextView
+        android:id="@+id/txtCadastroUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="@string/txtNovoVipTitulo"
+        android:textColor="@color/colorPrimaryDark" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/txtPrimeiroNomeClivip"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/colorVerde" />
+
+    <EditText
+        android:id="@+id/editPrimeiroNomeVip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:ems="10"
+        android:hint="@string/editPrimeiroNomeVip"
+        android:inputType="textPersonName"
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="@string/txtSobreNome"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/colorVerde" />
+
+    <EditText
+        android:id="@+id/editSobreNomeVip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/editSobreNomeVip"
+        android:inputType="textPersonName"
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+
+    <CheckBox
+        android:id="@+id/ckPessoaFisicaVIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_vertical"
+        android:onClick="pessoaFisica"
+        android:text="@string/ckBoxPessoaFisica" />
+
+
+    <Button
+        android:id="@+id/btSalvarContinuarVip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/colorBranco"
+        android:text="@string/btSalvarEContinuar"
+        android:background="@color/colorAzul" />
+
+    <Button
+        android:id="@+id/btCancelarVip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="@color/colorBranco"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorAzul"
+        android:text="@string/btCancelarVip" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

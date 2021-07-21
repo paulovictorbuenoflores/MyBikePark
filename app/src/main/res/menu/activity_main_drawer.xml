@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <!--item android:id="@+id/nav_adicionar_cliente"
+            android:icon="@drawable/ic_item_menu_padrao"
+            android:title="@string/fragmento_adicinar_cliente" /-->
+
+        <!--item android:id="@+id/nav_listar_clientes"
+            android:icon="@drawable/ic_item_menu_padrao"
+            android:title="@string/fragmento_listar_clientes" /-->
+
+        <item android:id="@+id/nav_listar_clientes_cards"
+            android:icon="@drawable/ic_item_menu_padrao"
+            android:title="@string/fragmento_listar_clientes_cards" />
+
+        <item android:id="@+id/nav_ImportanciaDabike"
+            android:icon="@drawable/ic_item_menu_padrao"
+            android:title="@string/itemImportanciaDaBike" />
+
+        <item android:id="@+id/nav_adicionar_parque"
+            android:icon="@drawable/ic_item_menu_padrao"
+            android:title="@string/fragmento_adicionarParque" />
+
+        <item android:id="@+id/nav_lista_parque"
+            android:icon="@drawable/ic_item_menu_padrao"
+            android:title="@string/listaDeParques" />
+
+    </group>
+
+</menu>

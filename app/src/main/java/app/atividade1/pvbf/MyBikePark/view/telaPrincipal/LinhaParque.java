@@ -1,4 +1,4 @@
-package app.atividade1.pvbf.MyBikePark.view.listaParqueMap;
+package app.atividade1.pvbf.MyBikePark.view.telaPrincipal;
 
 import androidx.appcompat.app.AppCompatActivity;
 

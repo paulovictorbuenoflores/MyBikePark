@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/cardview_shadow_start_color"
     android:orientation="vertical"
-    tools:context=".view.usuario.ClienteVipActivity">
+    tools:context=".view.usuario.CadastroPasso01Ativity">
 
     <ScrollView
         android:layout_width="match_parent"

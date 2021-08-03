@@ -29,6 +29,8 @@ import app.atividade1.pvbf.MyBikePark.R;
 import app.atividade1.pvbf.MyBikePark.api.AppUtil;
 import app.atividade1.pvbf.MyBikePark.controller.ClienteORMController;
 import app.atividade1.pvbf.MyBikePark.model.ClienteORM;
+import app.atividade1.pvbf.MyBikePark.view.usuario.AlterarMeusDados;
+import app.atividade1.pvbf.MyBikePark.view.usuario.MeusDados;
 
 
 // TODO - Criar o novo Layout para suporte aos CARDS

@@ -53,13 +53,11 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
         <activity android:name=".view.mapas.MainMapActivity"/>
-        <activity android:name=".view.listaParqueMap.ListaParque" />
-        <activity android:name=".view.listaParqueMap.LinhaParque" />
+        <activity android:name=".view.telaPrincipal.LinhaParque" />
         <activity android:name=".view.usuario.RecuperarSenhaActivity" />
-        <activity android:name=".view.usuario.ClienteVipActivity" />
+        <activity android:name=".view.usuario.CadastroPasso01Ativity" />
         <activity android:name=".view.usuario.CadastroUsuarioActivity" />
         <activity android:name=".view.usuario.LoginUserActivity" />
-        <activity android:name=".view.Main02Activity" />
         <activity
             android:name=".view.telaPrincipal.MainActivity"
             android:label="@string/app_name"

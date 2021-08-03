@@ -139,7 +139,7 @@ ClienteORM clienteORM;
         txtSejaVip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginUserActivity.this, ClienteVipActivity.class);
+                Intent intent = new Intent(LoginUserActivity.this, CadastroPasso01Ativity.class);
                 startActivity(intent);
                 finish();
                 return;

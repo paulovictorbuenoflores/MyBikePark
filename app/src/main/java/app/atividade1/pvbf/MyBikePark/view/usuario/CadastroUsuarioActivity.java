@@ -24,7 +24,6 @@ import app.atividade1.pvbf.MyBikePark.controller.ClienteController;
 import app.atividade1.pvbf.MyBikePark.controller.ClienteORMController;
 import app.atividade1.pvbf.MyBikePark.model.Cliente;
 import app.atividade1.pvbf.MyBikePark.model.ClienteORM;
-import app.atividade1.pvbf.MyBikePark.view.Main02Activity;
 
 public class CadastroUsuarioActivity extends AppCompatActivity {
     EditText editTextNome, editTextEmail, editTextSenha, editTextConfirmarSenha;
@@ -172,7 +171,7 @@ public class CadastroUsuarioActivity extends AppCompatActivity {
                         clienteORMController.insert(clienteORM);
                         //salvarSharedPreferences();
 
-                        Intent intent = new Intent(CadastroUsuarioActivity.this, Main02Activity.class);
+                        Intent intent = new Intent(CadastroUsuarioActivity.this, LoginUserActivity.class);
                         startActivity(intent);
                         finish();
                         return;

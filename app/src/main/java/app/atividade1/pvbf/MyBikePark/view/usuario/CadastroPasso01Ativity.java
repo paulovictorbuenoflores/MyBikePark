@@ -23,7 +23,7 @@ import app.atividade1.pvbf.MyBikePark.api.AppUtil;
 import app.atividade1.pvbf.MyBikePark.controller.ClienteController;
 import app.atividade1.pvbf.MyBikePark.model.Cliente;
 
-public class ClienteVipActivity extends AppCompatActivity {
+public class CadastroPasso01Ativity extends AppCompatActivity {
     EditText editPrimeiroNome, editSobrenome;
     CheckBox chPessoaFisica;
     Button btSalvarContinuar, btCancelar;
@@ -39,7 +39,7 @@ public class ClienteVipActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cliente_vip_card);
+        setContentView(R.layout.activity_cadastro_passo01);
 
         initFormulario();
 
@@ -47,7 +47,7 @@ public class ClienteVipActivity extends AppCompatActivity {
         btCancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new FancyAlertDialog.Builder(ClienteVipActivity.this)
+                new FancyAlertDialog.Builder(CadastroPasso01Ativity.this)
                         .setTitle("Confirme o Cancelamento")
                         .setBackgroundColor(Color.parseColor("#303F9F"))  //Don't pass R.color.colorvalue
                         .setMessage("Deseja realmente Cancelar ?")
@@ -61,7 +61,7 @@ public class ClienteVipActivity extends AppCompatActivity {
                         .OnPositiveClicked(new FancyAlertDialogListener() {
                             @Override
                             public void OnClick() {
-                                Intent intent = new Intent(ClienteVipActivity.this, LoginUserActivity.class);
+                                Intent intent = new Intent(CadastroPasso01Ativity.this, LoginUserActivity.class);
                                 startActivity(intent);
                                 finish();
                                 return;
@@ -92,7 +92,7 @@ public class ClienteVipActivity extends AppCompatActivity {
                     ultimoIDVIP = controller.getUltimoID();
 
                     salvarSharedPreferences();
-                    Intent intent = new Intent(ClienteVipActivity.this, CadastroUsuarioActivity.class);
+                    Intent intent = new Intent(CadastroPasso01Ativity.this, CadastroUsuarioActivity.class);
                     startActivity(intent);
                     finish();
 

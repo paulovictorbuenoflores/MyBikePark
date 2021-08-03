@@ -103,7 +103,7 @@ ClienteORM clienteORM;
                         //pegar o id do usuario
 
                        // Intent sendIntent = new Intent();
-                        restaurarSharedPreferences(editTextEmail.getText().toString(),editTextSenha.getText().toString());
+                        restaurarBDORM(editTextEmail.getText().toString(),editTextSenha.getText().toString());
                        //passar na intente o id do usuario
 
 
@@ -213,7 +213,7 @@ ClienteORM clienteORM;
         ///////////////////////////////////////////////////////
         isFormulario = false;
         cliente = new Cliente();
-        restaurarSharedPreferences(editTextEmail.getText().toString(),editTextSenha.getText().toString());
+        restaurarBDORM(editTextEmail.getText().toString(),editTextSenha.getText().toString());
         controller = new ClienteController(getApplicationContext());
         clienteORM =new ClienteORM();
         //
@@ -255,7 +255,7 @@ ClienteORM clienteORM;
         dados.apply();
     }
 
-    public int restaurarSharedPreferences(String email,String senha) {
+    public int restaurarBDORM(String email, String senha) {
         /*preferences = getSharedPreferences(AppUtil.PREF_APP, MODE_PRIVATE);
         cliente.setEmail(preferences.getString("Email", ""));
         cliente.setSenha(preferences.getString("Senha", ""));

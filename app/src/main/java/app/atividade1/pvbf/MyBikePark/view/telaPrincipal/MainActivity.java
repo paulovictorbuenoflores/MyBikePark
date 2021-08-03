@@ -1,14 +1,12 @@
 package app.atividade1.pvbf.MyBikePark.view.telaPrincipal;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -29,11 +26,9 @@ import com.shashank.sony.fancydialoglib.FancyAlertDialogListener;
 import com.shashank.sony.fancydialoglib.Icon;
 
 import app.atividade1.pvbf.MyBikePark.R;
+import app.atividade1.pvbf.MyBikePark.api.AppUtil;
 import app.atividade1.pvbf.MyBikePark.controller.ClienteORMController;
 import app.atividade1.pvbf.MyBikePark.model.ClienteORM;
-import app.atividade1.pvbf.MyBikePark.view.usuario.AtualizarMeusDadosActivity;
-import app.atividade1.pvbf.MyBikePark.view.usuario.MenuUserActivity;
-import app.atividade1.pvbf.MyBikePark.view.usuario.MeusDadosActivity;
 
 
 // TODO - Criar o novo Layout para suporte aos CARDS
@@ -73,7 +68,7 @@ public class MainActivity extends AppCompatActivity
 
         ////busca o cliente logado
         buscarCliente(id);
-
+//salvar no sharepreference
 
 
 
@@ -113,7 +108,7 @@ public class MainActivity extends AppCompatActivity
 
         obj=clienteORMController.getById(obj);
 
-
+salvarSharedPreferences(obj.getId());
 
         return obj;
     }
@@ -147,6 +142,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    //menu 3 pontinho no canto da tela
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -182,9 +178,18 @@ public class MainActivity extends AppCompatActivity
             return true;
         }
         else if (itemId == R.id.action_alterarDados) {
-            Intent intent = new Intent(MainActivity.this, AtualizarMeusDadosActivity.class);
-            startActivity(intent);
-            finish();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment,  new AlterarMeusDados()).commit();
+
+
+
+
+
+
+
+
+
+
+            Toast.makeText(getApplicationContext(), "Meu Perfil", Toast.LENGTH_SHORT).show();
             return true;
         }
         else if(itemId==R.id.action_ExcluirConta){
@@ -322,7 +327,16 @@ public class MainActivity extends AppCompatActivity
 
 
     }
+    private void salvarSharedPreferences(int id) {
+        SharedPreferences preferences;
+        preferences = getSharedPreferences(AppUtil.PREF_APP, MODE_PRIVATE);
+        SharedPreferences.Editor dados = preferences.edit();
 
+
+        dados.putInt("id", id);
+
+        dados.apply();
+    }
 
 
 }

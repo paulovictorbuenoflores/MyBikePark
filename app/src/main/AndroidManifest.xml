@@ -55,9 +55,6 @@
         <activity android:name=".view.mapas.MainMapActivity"/>
         <activity android:name=".view.listaParqueMap.ListaParque" />
         <activity android:name=".view.listaParqueMap.LinhaParque" />
-        <activity android:name=".view.usuario.AtualizarMeusDadosActivity" />
-        <activity android:name=".view.usuario.MeusDadosActivity" />
-        <activity android:name=".view.usuario.MenuUserActivity" />
         <activity android:name=".view.usuario.RecuperarSenhaActivity" />
         <activity android:name=".view.usuario.ClienteVipActivity" />
         <activity android:name=".view.usuario.CadastroUsuarioActivity" />

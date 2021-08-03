@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".view.usuario.AtualizarMeusDadosActivity">
+    tools:context=".view.telaPrincipal.AlterarMeusDados">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -79,7 +77,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
 
-                                android:text="@string/txtNovoVipTitulo"
+                                android:text="@string/txtAtualizarMeusDados"
                                 android:textAppearance="@android:style/TextAppearance.Holo.Small"
 
                                 android:textColor="@color/primaryTextColor"
@@ -117,7 +115,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
-                        android:text="@string/txtPrimeiroNomeClivip"
+                        android:text="@string/txtPrimeiroNomeAtulizarMeusDados"
                         android:textColor="@color/colorAccent" />
 
                     <EditText
@@ -129,7 +127,7 @@
                         android:ems="10"
                         android:enabled="false"
 
-                        android:hint="@string/editPrimeiroNomeVip"
+                        android:hint="@string/editPrimeiroNomeAtualizarMeusDados"
                         android:inputType="textPersonName" />
 
                     <TextView
@@ -140,7 +138,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
-                        android:text="@string/txtSobreNome"
+                        android:text="@string/txtSobreNomeAtulizarMeusDados"
                         android:textColor="@color/colorPrimaryDark" />
 
                     <EditText
@@ -151,7 +149,7 @@
                         android:layout_marginLeft="16dp"
                         android:ems="10"
                         android:enabled="false"
-                        android:hint="@string/editSobreNomeVip"
+                        android:hint="@string/editSobreNomeAtulizarMeusDados"
                         android:inputType="textPersonName" />
 
 
@@ -174,7 +172,7 @@
                             android:layout_marginEnd="16dp"
                             android:layout_weight="1"
                             android:background="@color/colorAzul"
-                            android:onClick="editarCardCliente"
+
                             android:text="@string/btEditarUPDATE"
                             android:textColor="@color/colorBranco" />
 
@@ -189,7 +187,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAzul"
                             android:enabled="false"
-                            android:onClick="salvarCardCliente"
+
                             android:text="@string/btSalvarUPDATE"
                             android:textColor="@color/colorBranco" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -344,7 +342,7 @@
                         android:layout_marginEnd="16dp"
                         android:enabled="false"
                         android:text="@string/chTermo"
-                        android:onClick="validarTermo"
+
                         android:textColor="@color/colorPrimaryDark" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -365,7 +363,7 @@
                             android:layout_marginEnd="16dp"
                             android:layout_weight="1"
                             android:background="@color/colorAzul"
-                            android:onClick="editarCardCredenciais"
+
                             android:text="@string/btEditarUPDATE"
                             android:textColor="@color/colorBranco" />
 
@@ -380,7 +378,7 @@
                             android:layout_weight="1"
                             android:background="@color/colorAzul"
                             android:enabled="false"
-                            android:onClick="salvarCardCredenciais"
+
                             android:text="@string/btSalvarUPDATE"
                             android:textColor="@color/colorBranco" />
                     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -421,5 +419,4 @@
 
 
     </ScrollView>
-
-</androidx.appcompat.widget.LinearLayoutCompat>
+</FrameLayout>

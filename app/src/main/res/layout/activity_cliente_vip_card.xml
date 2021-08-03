@@ -57,7 +57,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
 
-                                android:text="@string/txtTituloCad"
+                                android:text="@string/txtTituloCadPreCad"
                                 android:textColor="@color/primaryTextColor"
 
                                 android:textStyle="bold"
@@ -69,7 +69,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
 
-                                android:text="@string/txtNovoVipTitulo"
+                                android:text="@string/txtNovoTituloPreCad"
                                 android:textColor="@color/primaryTextColor"
 
                                 android:textStyle="bold"
@@ -109,11 +109,11 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
-                        android:text="@string/txtPrimeiroNomeClivip"
+                        android:text="@string/txtNomePreCad"
                         android:textColor="@color/colorAccent" />
 
                     <EditText
-                        android:id="@+id/editPrimeiroNomeVip"
+                        android:id="@+id/editPrimeiroNome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
@@ -121,7 +121,7 @@
                         android:layout_marginLeft="16dp"
                         android:ems="10"
 
-                        android:hint="@string/editPrimeiroNomeVip"
+                        android:hint="@string/editNomePreCad"
                         android:inputType="textPersonName" />
 
                     <TextView
@@ -132,18 +132,18 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
-                        android:text="@string/txtSobreNome"
+                        android:text="@string/txtSobreNomePreCad"
                         android:textColor="@color/colorPrimaryDark" />
 
                     <EditText
-                        android:id="@+id/editSobreNomeVip"
+                        android:id="@+id/editSobreNome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
                         android:ems="10"
 
-                        android:hint="@string/editSobreNomeVip"
+                        android:hint="@string/editSobreNomePreCad"
                         android:inputType="textPersonName" />
 
 
@@ -168,7 +168,7 @@
 
 
                     <Button
-                        android:id="@+id/btSalvarContinuarVip"
+                        android:id="@+id/btSalvar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -176,11 +176,11 @@
                         android:layout_marginEnd="16dp"
                         android:layout_marginTop="16dp"
                         android:background="@drawable/ripple"
-                        android:text="@string/btSalvarEContinuar"
+                        android:text="@string/btSalvarPreCad"
                         android:textColor="@color/colorBranco" />
 
                     <Button
-                        android:id="@+id/btCancelarVip"
+                        android:id="@+id/btCancelar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -189,7 +189,7 @@
                         android:layout_marginEnd="16dp"
 
                         android:background="@drawable/ripple"
-                        android:text="@string/btCancelarVip"
+                        android:text="@string/btCancelarPreCad"
                         android:textColor="@color/colorBranco"
                         android:layout_marginBottom="16dp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>

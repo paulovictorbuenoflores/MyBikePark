@@ -122,11 +122,11 @@ public class ClienteVipActivity extends AppCompatActivity {
 
     private void initFormulario() {
 
-        editPrimeiroNome = findViewById(R.id.editPrimeiroNomeVip);
-        editSobrenome = findViewById(R.id.editSobreNomeVip);
-        chPessoaFisica = findViewById(R.id.ckPessoaFisicaVIP);
-        btSalvarContinuar = findViewById(R.id.btSalvarContinuarVip);
-        btCancelar = findViewById(R.id.btCancelarVip);
+        editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
+        editSobrenome = findViewById(R.id.editSobreNome);
+
+        btSalvarContinuar = findViewById(R.id.btSalvar);
+        btCancelar = findViewById(R.id.btCancelar);
         isFormulario = false;
 
         novoVip = new Cliente();

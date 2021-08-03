@@ -1,10 +1,8 @@
 package app.atividade1.pvbf.MyBikePark.view.telaPrincipal;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +19,8 @@ import app.atividade1.pvbf.MyBikePark.controller.ClienteORMController;
 import app.atividade1.pvbf.MyBikePark.model.ClienteORM;
 
 import static android.content.Context.MODE_PRIVATE;
-
-//TODO: TENHO QUE PEGAR O ID DO USUARIO ENVIADO DA TELA MAIN
-public class MeusDados extends Fragment {
-
+//TODO: MODIFICANDO TELA PARA ALTERAR MEUS DADOS
+public class AlterarMeusDados extends Fragment {
     View view;
 
     TextView txtTitulo;
@@ -66,10 +62,10 @@ public class MeusDados extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_meus_dados, container, false);
+        view = inflater.inflate(R.layout.fragmento_atulizar_meus_dados, container, false);
 
-        iniciarComponentesDeLayout();
-        popularFormulario();
+      //  iniciarComponentesDeLayout();
+     //   popularFormulario();
         //escutarEventosDosBotoes();
 
 

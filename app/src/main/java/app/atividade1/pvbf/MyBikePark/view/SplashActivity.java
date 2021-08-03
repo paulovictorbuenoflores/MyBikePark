@@ -22,8 +22,8 @@ import java.util.List;
 import app.atividade1.pvbf.MyBikePark.R;
 import app.atividade1.pvbf.MyBikePark.api.AppUtil;
 
+import app.atividade1.pvbf.MyBikePark.view.telaPrincipal.MainActivity;
 import app.atividade1.pvbf.MyBikePark.view.usuario.LoginUserActivity;
-import app.atividade1.pvbf.MyBikePark.view.usuario.MenuUserActivity;
 
 public class SplashActivity extends AppCompatActivity {
     // Use qualquer número
@@ -76,7 +76,7 @@ public class SplashActivity extends AppCompatActivity {
                 Intent intent;
                 if (isLembrarSenha) {
 
-                    intent = new Intent(SplashActivity.this, MenuUserActivity.class);
+                    intent = new Intent(SplashActivity.this, MainActivity.class);
 
                 } else {
                     intent = new Intent(SplashActivity.this, LoginUserActivity.class);

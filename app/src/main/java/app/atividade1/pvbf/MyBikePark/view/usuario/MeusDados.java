@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
 
@@ -30,7 +31,7 @@ public class MeusDados extends Fragment {
     TextView txtTitulo;
     Button btVoltar;
     //cli vip
-    EditText editPrimeiroNomeMydb, editSobreNomeMydb;
+    TextView editPrimeiroNomeMydb, editSobreNomeMydb;
     CheckBox ckPessoaFisicaVIPMydb;
     //cli PF
     EditText editCPFPF, editNomeCompleto, editSobreNomeVipPFMydb;
@@ -39,7 +40,7 @@ public class MeusDados extends Fragment {
     EditText editCNPJMydb, editRazaoSocialMydb, editDataAberturaMydb;
     CheckBox checSimplesNacionalMydb, checMEIMydb;
     //credenciais
-    EditText editEmailMydb, editSenhaMydb;
+    TextView editEmailMydb, editSenhaMydb;
     CheckBox checkBoxTermoMydb;
 
     ClienteORMController clienteORMController;
@@ -70,6 +71,7 @@ public class MeusDados extends Fragment {
 
         iniciarComponentesDeLayout();
         popularFormulario();
+
         //escutarEventosDosBotoes();
 
 

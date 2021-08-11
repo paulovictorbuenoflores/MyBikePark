@@ -39,7 +39,10 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:title="@string/toolbarImportancidaBike"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:theme="@style/ToolBarStyle"
+                />
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -52,6 +55,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:justificationMode="inter_word"
             android:textSize="20sp"
             android:text="@string/txtUmPoucoSombreBike"/>
 

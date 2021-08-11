@@ -1,6 +1,8 @@
 package app.atividade1.pvbf.MyBikePark.model;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
     private int id;
     private String primeiroNome, sobreNome, email, senha;
     private int imagem;

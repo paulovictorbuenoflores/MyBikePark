@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+       app:cardCornerRadius="20dp"
+       android:layout_margin="5dp"
+    app:cardElevation="20dp"
+       android:layout_width="match_parent"
+       android:layout_height="150dp">
+      <LinearLayout
+
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+          <ImageView
+              android:id="@+id/rvImageView"
+              android:layout_width="120dp"
+              android:layout_margin="10dp"
+              android:layout_height="120dp"
+              android:layout_marginTop="20dp" />
+
+          <TextView
+              android:id="@+id/rvNome"
+              android:layout_width="210dp"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="16dp"
+              android:layout_marginStart="16dp"
+              android:textSize="20dp"
+              android:textColor="@color/preto"
+              android:layout_marginEnd="16dp"
+              android:text="Parques" />
+      </LinearLayout>
+   </androidx.cardview.widget.CardView>

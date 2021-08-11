@@ -75,7 +75,7 @@ public class ListarClientesFragment extends Fragment {
         clientes = clienteController.gerarListaDeClientesListView();
 
         clienteAdapter = new ArrayAdapter<>(getContext(),
-                R.layout.listar_cliente_item,
+                R.layout.item_usuario,
                 R.id.txtItemLista, clientes);
 
         listView.setAdapter(clienteAdapter);

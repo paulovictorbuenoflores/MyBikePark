@@ -29,7 +29,7 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/primaryDarkColor"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -37,12 +37,14 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <ImageView
-                            android:layout_width="64dp"
-                            android:layout_height="45dp"
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
                             android:layout_margin="8dp"
+                            app:lottie_autoPlay="true"
+                            app:lottie_loop="true"
 
-                            app:srcCompat="@mipmap/ic_novo_cadastroif" />
+                            app:lottie_rawRes="@raw/mulher_bike"/>
                         <!-- android:src="@mipmap/ic_launcher_round"-->
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -56,11 +58,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-
                                 android:text="@string/txtTituloCadPreCad"
-                                android:textColor="@color/primaryTextColor"
+                                android:textColor="@color/colorWhite"
 
-                                android:textStyle="bold"
                                 android:textAppearance="@android:style/TextAppearance.Holo.Large" />
 
                             <TextView
@@ -68,11 +68,9 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-
                                 android:text="@string/txtNovoTituloPreCad"
-                                android:textColor="@color/primaryTextColor"
+                                android:textColor="@color/colorWhite"
 
-                                android:textStyle="bold"
                                 android:textAppearance="@android:style/TextAppearance.Holo.Small" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -110,7 +108,7 @@
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
                         android:text="@string/txtNomePreCad"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="@color/primaryDarkColor" />
 
                     <EditText
                         android:id="@+id/editPrimeiroNome"
@@ -133,7 +131,7 @@
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
                         android:text="@string/txtSobreNomePreCad"
-                        android:textColor="@color/colorPrimaryDark" />
+                        android:textColor="@color/primaryDarkColor" />
 
                     <EditText
                         android:id="@+id/editSobreNome"
@@ -167,28 +165,27 @@
                     android:orientation="vertical">
 
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/btSalvar"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:layout_marginTop="16dp"
-                        android:background="@drawable/ripple"
                         android:text="@string/btSalvarPreCad"
                         android:textColor="@color/colorBranco" />
 
-                    <Button
+                    <com.google.android.material.button.MaterialButton
                         android:id="@+id/btCancelar"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:cornerRadius="5dp"
+                        android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
 
-                        android:background="@drawable/ripple"
                         android:text="@string/btCancelarPreCad"
                         android:textColor="@color/colorBranco"
                         android:layout_marginBottom="16dp" />

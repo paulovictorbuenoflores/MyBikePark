@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.shashank.sony.fancydialoglib.Animation;
 import com.shashank.sony.fancydialoglib.FancyAlertDialog;
 import com.shashank.sony.fancydialoglib.FancyAlertDialogListener;
@@ -53,6 +55,8 @@ ClienteORM clienteORM;
         setContentView(R.layout.activity_login_user);
         initFormulario();
         loadImagens();
+
+
         clientes = new ArrayList<>();
         controller = new ClienteController(getApplicationContext());
         clientes = controller.listar();
@@ -206,7 +210,7 @@ ClienteORM clienteORM;
         checkBoxLembrarSenha = findViewById(R.id.checkBoxLembrarSenhaLogin);
         btAcessar = findViewById(R.id.btAcessarLogin);
         txtSejaVip = findViewById(R.id.btSejaVipLogin);
-        imgBackGround = findViewById(R.id.imgBackground);
+        //imgBackGround = findViewById(R.id.imgBackground);
         imGLogo = findViewById(R.id.imgLogo);
 
 
@@ -234,8 +238,8 @@ ClienteORM clienteORM;
                 .centerCrop ()
                 .into (imgBackGround);*/
         // Picasso.get().load(AppUtil.URL_IMG_BACKGROUD).into(imgBackGround);
-        Picasso.get().load(AppUtil.URL_IMG_BACKGROUD).into(imgBackGround);
-        Picasso.get().load(AppUtil.URL_IMG_LOGO).placeholder(R.drawable.carregando_animacao).into(imGLogo);
+        //Picasso.get().load(AppUtil.URL_IMG_BACKGROUD).into(imgBackGround);
+       // Picasso.get().load(AppUtil.URL_IMG_LOGO).placeholder(R.drawable.carregando_animacao).into(imGLogo);
     }
 
     //verificar checkbox se é para lembrarsenha

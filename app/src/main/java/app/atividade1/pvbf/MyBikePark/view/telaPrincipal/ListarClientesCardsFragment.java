@@ -54,7 +54,7 @@ public class ListarClientesCardsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.fragment_listar_clientes_cards, container, false);
+        view =  inflater.inflate(R.layout.fragment_lista_usuarios, container, false);
 
         TextView txtTitulo = view.findViewById(R.id.txtTitulo);
 
@@ -75,7 +75,7 @@ public class ListarClientesCardsFragment extends Fragment {
         clientes = clienteController.gerarListaDeClientesListView();
 
         clienteAdapter = new ArrayAdapter<>(getContext(),
-                R.layout.listar_cliente_item,
+                R.layout.item_usuario,
                 R.id.txtItemLista, clientes);
 
         listView.setAdapter(clienteAdapter);

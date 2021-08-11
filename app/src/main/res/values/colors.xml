@@ -13,15 +13,25 @@
     <color name="colorPrimaryDark">#aa00ff</color>
     <color name="colorAccent">#e254ff</color>
     <color name="colorPrimary">#7200ca</color>
-    <color name="primaryTextColor">#ffffff</color>
+    <!--<color name="primaryTextColor">#ffffff</color> -->
 
 
     <!-- cores do background das telas -->
-      <color name="azul">#07487C</color>
+    <color name="azul">#07487C</color>
 
     <!-- cores para os campos dos layouta -->
     <color name="campos">#E4D3B8</color>
 
     <!--Map-->
-<color name="verd_limao">#55C33C</color>
+    <color name="verd_limao">#55C33C</color>
+
+    <!-- MUDA ESSAS CORES, MUDA TODAS AS CORES DO APLICATIVO -->
+    <color name="primaryColor">#81c784</color>
+    <color name="primaryLightColor">#b2fab4</color>
+    <color name="primaryDarkColor">#519657</color>
+    <color name="secondaryColor">#80cbc4</color>
+    <color name="secondaryLightColor">#b2fef7</color>
+    <color name="secondaryDarkColor">#4f9a94</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#000000</color>
 </resources>

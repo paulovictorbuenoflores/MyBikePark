@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.fragment.app.Fragment;
 
@@ -38,6 +39,9 @@ public class ModeloFragmentListaRiders extends Fragment {
 
 
         //txtTitulo.setTextColor(ColorStateList.valueOf(Color.CYAN));
+
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhite));
 
         return view;
     }

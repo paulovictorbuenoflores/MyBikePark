@@ -67,12 +67,9 @@ public class MainActivity extends AppCompatActivity
         Log.d(null, "Nome:" + bundle.getString("id") + id);
 
 
-
         ////busca o cliente logado
         buscarCliente(id);
 //salvar no sharepreference
-
-
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -104,23 +101,23 @@ public class MainActivity extends AppCompatActivity
     }
 
     private ClienteORM buscarCliente(int id) {
-        ClienteORM obj=new ClienteORM();
-        clienteORMController =new ClienteORMController();
+        ClienteORM obj = new ClienteORM();
+        clienteORMController = new ClienteORMController();
         obj.setId(id);
 
-        obj=clienteORMController.getById(obj);
+        obj = clienteORMController.getById(obj);
 
-salvarSharedPreferences(obj.getId());
+        salvarSharedPreferences(obj.getId());
 
         return obj;
     }
 
     private void initFormulario() {
 
-        txtNomeUserNoMenu=findViewById(R.id.txtNomeUser);
+        txtNomeUserNoMenu = findViewById(R.id.txtNomeUser);
 
-        clienteORM =new ClienteORM();
-        clienteORMController =new ClienteORMController();
+        clienteORM = new ClienteORM();
+        clienteORMController = new ClienteORMController();
 
     }
 
@@ -137,11 +134,11 @@ salvarSharedPreferences(obj.getId());
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-    //txtNomeUserNoMenu=findViewById(R.id.txtNomeUse);
+        //txtNomeUserNoMenu=findViewById(R.id.txtNomeUse);
 
 
         getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     //menu 3 pontinho no canto da tela
@@ -149,52 +146,29 @@ salvarSharedPreferences(obj.getId());
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int itemId = item.getItemId();
-        clienteORM=buscarCliente(id);
+        clienteORM = buscarCliente(id);
         //noinspection SimplifiableIfStatement
         if (itemId == R.id.action_perfil) {
-
-
-
-
-
 
 
             //Fragment myFrag = new Fragment();
             //Bundle bundle = new Bundle();
             //bundle.putInt("id", id);
 
-           // myFrag.setArguments(bundle);
+            // myFrag.setArguments(bundle);
             //fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction().replace(R.id.content_fragment,  new MeusDados()).commit();
-
-
-
-
-
-
-
-
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new MeusDados()).commit();
 
 
             Toast.makeText(getApplicationContext(), "Meu Perfil", Toast.LENGTH_SHORT).show();
             return true;
-        }
-        else if (itemId == R.id.action_alterarDados) {
-            fragmentManager.beginTransaction().replace(R.id.content_fragment,  new AlterarMeusDados()).commit();
-
-
-
-
-
-
-
-
+        } else if (itemId == R.id.action_alterarDados) {
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new AlterarMeusDados()).commit();
 
 
             Toast.makeText(getApplicationContext(), "Meu Perfil", Toast.LENGTH_SHORT).show();
             return true;
-        }
-        else if(itemId==R.id.action_ExcluirConta){
+        } else if (itemId == R.id.action_ExcluirConta) {
             new FancyAlertDialog.Builder(MainActivity.this)
                     .setTitle("Excluir Conta")
                     .setBackgroundColor(Color.parseColor("#303F9F"))  //Don't pass R.color.colorvalue
@@ -214,7 +188,6 @@ salvarSharedPreferences(obj.getId());
                             clienteORMController.deletar(clienteORM);
 
 
-
                             Toast.makeText(getApplicationContext(), clienteORM.getPrimeiroNome() + ", volte sempre e obrigado...", Toast.LENGTH_LONG).show();
                             //isLoginAutomatico = false;
                             //  salvarSharedPreferences();
@@ -230,8 +203,7 @@ salvarSharedPreferences(obj.getId());
                     })
                     .build();
 
-        }
-        else if (itemId == R.id.action_settings) {
+        } else if (itemId == R.id.action_settings) {
             new FancyAlertDialog.Builder(MainActivity.this)
                     .setTitle("Sair Do Aplicativo")
                     .setBackgroundColor(Color.parseColor("#303F9F"))  //Don't pass R.color.colorvalue
@@ -271,48 +243,42 @@ salvarSharedPreferences(obj.getId());
     public boolean onNavigationItemSelected(MenuItem item) {
 
 
-
         int id = item.getItemId();
 
 
         //TODO: Obter ID para a opcao selecionada no MENU DRAWER
         if (id == R.id.nav_listar_clientes_cards) {
-            menu=navigationView.getMenu();
-            nav_ListaRiders =menu.findItem(R.id.nav_listar_clientes_cards);
+            menu = navigationView.getMenu();
+            nav_ImportanciaDaBike = menu.findItem(R.id.nav_ImportanciaDabike);
 
 
-
-
-
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListarClientesCardsFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new TabLayoutFragment()).commit();
 
 
         } else if (id == R.id.nav_ImportanciaDabike) {
-            menu=navigationView.getMenu();
-            nav_ImportanciaDaBike=menu.findItem(R.id.nav_ImportanciaDabike);
+            menu = navigationView.getMenu();
+            nav_ImportanciaDaBike = menu.findItem(R.id.nav_ImportanciaDabike);
 
 
-
-
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloFragmentListaRiders()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new TabLayoutFragment()).commit();
 
         } else if (id == R.id.nav_adicionar_parque) {
-            menu=navigationView.getMenu();
-            nav_adicionar_parque=menu.findItem(R.id.nav_adicionar_parque);
+            menu = navigationView.getMenu();
+            nav_adicionar_parque = menu.findItem(R.id.nav_adicionar_parque);
 
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarParqueFragment()).commit();
 
         } else if (id == R.id.nav_lista_parque) {
-            menu=navigationView.getMenu();
-            nav_lista_parque=menu.findItem(R.id.nav_lista_parque);
+            menu = navigationView.getMenu();
+            nav_lista_parque = menu.findItem(R.id.nav_lista_parque);
 
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListaDeParquesFragmentoRecyclerView()).commit();
 
-        }else if(id == R.id.txtNomeUser){
+        } else if (id == R.id.txtNomeUser) {
             //headerLayout=navigationView.getHeaderCount();
-            txtNomeUserNoMenu=findViewById(R.id.txtNomeUser);
+            txtNomeUserNoMenu = findViewById(R.id.txtNomeUser);
             txtNomeUserNoMenu.setText("t");
 
 
@@ -323,12 +289,13 @@ salvarSharedPreferences(obj.getId());
         return true;
     }
 
-//TODO: IMPLEMENTAR TODOS OS MAP
+    //TODO: IMPLEMENTAR TODOS OS MAP
     //bt map mostrar todos os parques no mapa
     public void todosOsParques(View view) {
 
 
     }
+
     private void salvarSharedPreferences(int id) {
         SharedPreferences preferences;
         preferences = getSharedPreferences(AppUtil.PREF_APP, MODE_PRIVATE);

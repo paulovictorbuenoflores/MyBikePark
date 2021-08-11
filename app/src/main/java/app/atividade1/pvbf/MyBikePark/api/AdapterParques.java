@@ -16,7 +16,6 @@ import java.util.List;
 
 
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.model.Cliente;
 import app.atividade1.pvbf.MyBikePark.model.ParquesORM;
 import app.atividade1.pvbf.MyBikePark.view.mapas.MainMapActivity;
 
@@ -40,7 +39,7 @@ public class AdapterParques extends RecyclerView.Adapter<AdapterParques.ViewHold
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View linhaView = inflater.inflate(R.layout.activity_linha_parque, parent, false);
+        View linhaView = inflater.inflate(R.layout.item_parque, parent, false);
         ViewHolder viewHolder = new ViewHolder(linhaView);
         return viewHolder;
     }

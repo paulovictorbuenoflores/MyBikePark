@@ -47,10 +47,9 @@ public class ListaDeParquesFragmentoRecyclerView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view =  inflater.inflate(R.layout.lista_de_parques_fragmento_recycler_view, container, false);
+        view =  inflater.inflate(R.layout.fragment_lista_parques, container, false);
 
         iniciarComponentesDeLayout();
-
 
 
         return view;

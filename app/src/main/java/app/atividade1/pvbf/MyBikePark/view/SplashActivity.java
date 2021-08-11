@@ -27,17 +27,18 @@ import app.atividade1.pvbf.MyBikePark.view.usuario.LoginUserActivity;
 
 public class SplashActivity extends AppCompatActivity {
     // Use qualquer número
-    public static final int APP_PERMISSOES = 2020;
+    private SharedPreferences preferences;
+    private ImageView imgCarregar;
+    private final int TEMPO_SPLASH_SCREEN = 3;
 
     // Array String com a lista de permissões necessárias
-    String[] permissoesRequeridas = new String[]{
+    private String[] permissoesRequeridas = new String[]{
             Manifest.permission.CAMERA,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.ACCESS_COARSE_LOCATION};
 
-    SharedPreferences preferences;
-    ImageView imgCarregar;
-    boolean isLembrarSenha = false;
+    private static final int APP_PERMISSOES = 2020;
+    private boolean isLembrarSenha = false;
 
 
     @Override
@@ -52,7 +53,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
         // Verificar as permissões
-        if (validarPermissoes()) {
+      if (validarPermissoes()) {
             iniciarApp();
         } else {
 
@@ -65,7 +66,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public void initFormulario() {
-        imgCarregar = findViewById(R.id.imgBackground);
+        //imgCarregar = findViewById(R.id.imgBackground);
 
     }
 
@@ -87,7 +88,7 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
                 // return;
             }
-        }, AppUtil.Time_SPLASH);
+        }, TEMPO_SPLASH_SCREEN*1000);
 
     }
 
@@ -112,7 +113,7 @@ public class SplashActivity extends AppCompatActivity {
                 .centerCrop ()
                 .into (imgBackGround);*/
         // Picasso.get().load(AppUtil.URL_IMG_BACKGROUD).into(imgBackGround);
-        Picasso.get().load(AppUtil.URL_IMGSPLASH).placeholder(R.drawable.carregando_animacao).into(imgCarregar);
+        //Picasso.get().load(AppUtil.URL_IMGSPLASH).placeholder(R.drawable.carregando_animacao).into(imgCarregar);
         // Picasso.get().load(AppUtil.URL_IMG_LOGO).placeholder(R.drawable.carregando_animacao).into(imGLogo);
     }
 
@@ -130,7 +131,6 @@ public class SplashActivity extends AppCompatActivity {
             if (result != PackageManager.PERMISSION_GRANTED) {
                 permissoesRequeridas.add(p);
             }
-
         }
 
         //caso o array n esteja vazio significa que permissao para serem autorizas
@@ -138,9 +138,7 @@ public class SplashActivity extends AppCompatActivity {
         if (!permissoesRequeridas.isEmpty()) {
             ActivityCompat.requestPermissions(this, permissoesRequeridas.toArray(new String[permissoesRequeridas.size()]), APP_PERMISSOES);
             return false;
-
         }
-
         return true;
 
     }

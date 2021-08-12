@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity
     FragmentManager fragmentManager;
 
     NavigationView navigationView;
-
+LinearLayout linearLayout;
     Menu menu;
     //para controlar os itens do menu
     MenuItem nav_ListaRiders;
@@ -75,12 +76,16 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        //butao de mapa
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Action Button Clicado", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                fragmentManager.beginTransaction().replace(R.id.content_fragment, new TabLayoutFragment()).commit();
 
             }
         });
@@ -114,7 +119,7 @@ public class MainActivity extends AppCompatActivity
 
     private void initFormulario() {
 
-        txtNomeUserNoMenu = findViewById(R.id.txtNomeUser);
+        txtNomeUserNoMenu = findViewById(R.id.txtNomeUserteste);
 
         clienteORM = new ClienteORM();
         clienteORMController = new ClienteORMController();
@@ -260,7 +265,7 @@ public class MainActivity extends AppCompatActivity
             nav_ImportanciaDaBike = menu.findItem(R.id.nav_ImportanciaDabike);
 
 
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new TabLayoutFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloFragmentListaRiders()).commit();
 
         } else if (id == R.id.nav_adicionar_parque) {
             menu = navigationView.getMenu();
@@ -269,20 +274,19 @@ public class MainActivity extends AppCompatActivity
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new AdicionarParqueFragment()).commit();
 
-        } else if (id == R.id.nav_lista_parque) {
-            menu = navigationView.getMenu();
-            nav_lista_parque = menu.findItem(R.id.nav_lista_parque);
+        }else if(id==R.id.txtNomeUserteste){
 
-
-            fragmentManager.beginTransaction().replace(R.id.content_fragment, new ListaDeParquesFragmentoRecyclerView()).commit();
-
-        } else if (id == R.id.txtNomeUser) {
-            //headerLayout=navigationView.getHeaderCount();
-            txtNomeUserNoMenu = findViewById(R.id.txtNomeUser);
-            txtNomeUserNoMenu.setText("t");
+            txtNomeUserNoMenu.setText("teste");
 
 
         }
+
+
+
+
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

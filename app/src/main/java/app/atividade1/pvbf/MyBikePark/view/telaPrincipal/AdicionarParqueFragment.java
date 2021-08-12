@@ -22,6 +22,8 @@ import android.widget.Toast;
 import androidx.camera.core.ImageCapture;
 import androidx.camera.core.ImageCaptureException;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.shashank.sony.fancydialoglib.Animation;
@@ -59,6 +61,7 @@ public class AdicionarParqueFragment extends Fragment {
     Boolean isFormularioOK;
     ImageView imageView;
     Bitmap bitmapGlobal;
+    FragmentManager fragmentManager;
 
     public AdicionarParqueFragment() {
     }
@@ -76,16 +79,63 @@ public class AdicionarParqueFragment extends Fragment {
 
         view = inflater.inflate(R.layout.adicionar_parque, container, false);
 
-        TextView txtTitulo = view.findViewById(R.id.txtTitulo);
-        txtTitulo.setText("Adicionar Parque");
+        //pegarDadosFormulario
         initFormulario();
 
 
-
-
-
-
         //btsalvar
+        salvar();
+
+        //btcancelar
+        calcelar();
+
+        //pegar img
+        pegarIMG();
+
+
+        return view;
+    }
+
+    private void calcelar() {
+        btCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                fragmentTransaction.replace(R.id.content_fragment, new TabLayoutFragment()).commit();
+
+            }
+        });
+    }
+
+    private void pegarIMG() {
+        txtIMG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              /*  Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, IMAGEM_INTERNA);*/
+                Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent,GALERIA_IMAGENS);
+
+            }
+        });
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                   /*  Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("image/*");
+                startActivityForResult(intent, IMAGEM_INTERNA);*/
+                Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent,GALERIA_IMAGENS);
+            }
+        });
+
+    }
+
+    private void salvar() {
         btSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -117,7 +167,7 @@ public class AdicionarParqueFragment extends Fragment {
                 if (isFormularioOK != false) {
 
 
-                   // ImageView imageView = new ImageView(getApplicationContext());
+                    // ImageView imageView = new ImageView(getApplicationContext());
 
 
                     controller =new ParqueController(getApplicationContext());
@@ -130,46 +180,24 @@ public class AdicionarParqueFragment extends Fragment {
 
 
 
-                    Toast.makeText(getApplicationContext(), "cadastrando", Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(getApplicationContext(), "cadastrando", Toast.LENGTH_SHORT).show();
 
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                    fragmentTransaction.replace(R.id.content_fragment, new TabLayoutFragment()).commit();
+
+                    //fragmentManager.beginTransaction().replace(R.id.content_fragment, new TabLayoutFragment()).commit();
 
 
                 }
             }
         });
-        //btcancelar
-        btCancelar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
 
-            }
-        });
-        //pegar img
-        txtIMG.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              /*  Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                startActivityForResult(intent, IMAGEM_INTERNA);*/
-                Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent,GALERIA_IMAGENS);
-
-            }
-        });
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                   /*  Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                startActivityForResult(intent, IMAGEM_INTERNA);*/
-                Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent,GALERIA_IMAGENS);
-            }
-        });
 
 
-        return view;
     }
 
     private void initFormulario() {

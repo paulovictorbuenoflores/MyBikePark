@@ -10,6 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:id="@+id/linearLayoutMenu"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
@@ -19,11 +20,11 @@
         android:contentDescription="@string/nav_header_desc"
         android:layout_marginTop="10dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/outline_account_circle_24"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24"
         app:tint="@color/preto" />
 
     <TextView
-        android:id="@+id/txtNomeUser"
+        android:id="@+id/txtNomeUserteste"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/nav_header_vertical_spacing"

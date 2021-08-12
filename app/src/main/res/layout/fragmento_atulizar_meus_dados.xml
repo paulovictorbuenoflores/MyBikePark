@@ -37,7 +37,7 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/primaryDarkColor"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -68,7 +68,7 @@
                                 android:text="@string/txtAtualizarMeusDados"
                                 android:textAppearance="@android:style/TextAppearance.Holo.Large"
 
-                                android:textColor="@color/primaryTextColor"
+                                android:textColor="@color/colorBranco"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -80,7 +80,7 @@
                                 android:text="@string/txtAtualizarMeusDados"
                                 android:textAppearance="@android:style/TextAppearance.Holo.Small"
 
-                                android:textColor="@color/primaryTextColor"
+                                android:textColor="@color/colorBranco"
                                 android:textStyle="bold" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -116,7 +116,7 @@
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
                         android:text="@string/txtPrimeiroNomeAtulizarMeusDados"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="@color/primaryColor" />
 
                     <EditText
                         android:id="@+id/editPrimeiroNomeMydb"
@@ -139,7 +139,7 @@
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
                         android:text="@string/txtSobreNomeAtulizarMeusDados"
-                        android:textColor="@color/colorPrimaryDark" />
+                        android:textColor="@color/primaryColor"/>
 
                     <EditText
                         android:id="@+id/editSobreNomeMydb"
@@ -210,7 +210,7 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/colorPrimaryDark"
+                    android:background="@color/primaryColor"
                     android:orientation="vertical">
 
                     <androidx.appcompat.widget.LinearLayoutCompat
@@ -277,7 +277,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:text="@string/txtCadUserEmail"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="@color/primaryColor"/>
 
                     <EditText
                         android:id="@+id/editEmailMydb"
@@ -298,7 +298,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:text="@string/txtCadUserSenha"
-                        android:textColor="@color/colorAccent" />
+                        android:textColor="@color/primaryColor" />
 
                     <EditText
                         android:id="@+id/editSenhaMydb"
@@ -316,7 +316,7 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="@color/primaryColor"
                         android:text="@string/txtCadUserConfirmarSenha"
                         android:layout_marginEnd="16dp"
                         android:layout_marginStart="16dp" />
@@ -342,8 +342,7 @@
                         android:layout_marginEnd="16dp"
                         android:enabled="false"
                         android:text="@string/chTermo"
-
-                        android:textColor="@color/colorPrimaryDark" />
+                        android:textColor="@color/primaryColor" />
 
                     <androidx.appcompat.widget.LinearLayoutCompat
                         android:layout_width="match_parent"

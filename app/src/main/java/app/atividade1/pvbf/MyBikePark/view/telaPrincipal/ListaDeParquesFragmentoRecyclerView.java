@@ -77,7 +77,7 @@ public class ListaDeParquesFragmentoRecyclerView extends Fragment {
 
     }
 
-    private void salvarOBJ() {
+    /*private void salvarOBJ() {
 
 
         ImageView imageView = new ImageView(getApplicationContext());
@@ -119,6 +119,6 @@ public class ListaDeParquesFragmentoRecyclerView extends Fragment {
         controller.insert(ap);
         controller.insert(am);
 
-    }
+    }*/
 
 }

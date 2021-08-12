@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
     <item
         android:id="@+id/action_perfil"
         android:icon="@drawable/ic_baseline_account_circle_24"
         android:orderInCategory="100"
+
         android:title="@string/meu_perfil"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_alterarDados"
         android:icon="@drawable/ic_baseline_edit_24"
         android:orderInCategory="100"
-        android:title="Alterar"
+        android:title="@string/adicionar_novo_cliente"
         app:showAsAction="never" />
+
     <item
         android:id="@+id/action_ExcluirConta"
         android:icon="@drawable/ic_baseline_delete_forever_24"
         android:orderInCategory="100"
-        android:title="Excluir"
+        android:title="@string/excluirMenu"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_baseline_login_24"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/sairMenu"
 
         app:showAsAction="never" />
-
+    </group>
 </menu>

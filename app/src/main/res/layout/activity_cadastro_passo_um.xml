@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/cardview_shadow_start_color"
     android:orientation="vertical"
-    tools:context=".activities.RecuperarSenhaActivity">
+    tools:context=".activities.CadastroPassoUmActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,8 +26,6 @@
                 app:cardCornerRadius="4dp"
                 app:cardElevation="8dp">
 
-
-
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -39,18 +37,14 @@
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                         <com.airbnb.lottie.LottieAnimationView
-                            android:id="@+id/imgLogo"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="16dp"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
+                        <com.airbnb.lottie.LottieAnimationView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:layout_margin="8dp"
                             app:lottie_autoPlay="true"
                             app:lottie_loop="true"
-                            app:lottie_rawRes="@raw/mulher_bike" />
+
+                            app:lottie_rawRes="@raw/mulher_bike"/>
                         <!-- android:src="@mipmap/ic_launcher_round"-->
 
                         <androidx.appcompat.widget.LinearLayoutCompat
@@ -60,15 +54,24 @@
                             android:orientation="vertical">
 
                             <TextView
+                                android:id="@+id/txtCad"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="@string/txtTituloCadPreCad"
+                                android:textColor="@color/colorWhite"
+
+                                android:textAppearance="@android:style/TextAppearance.Holo.Large" />
+
+                            <TextView
                                 android:id="@+id/txtCadastroUser"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:padding="16dp"
-                                android:text="@string/txtTituloRecuperarsenha"
-                                android:textColor="@color/colorBranco"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
+                                android:text="@string/txtNovoTituloPreCad"
+                                android:textColor="@color/colorWhite"
+
+                                android:textAppearance="@android:style/TextAppearance.Holo.Small" />
                         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
@@ -96,7 +99,6 @@
                     android:background="@color/colorBranco"
                     android:orientation="vertical">
 
-
                     <TextView
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
@@ -105,24 +107,47 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginTop="16dp"
                         android:padding="8dp"
-                        android:text="@string/txtEmailRecuperarSenha"
-                        android:textColor="@color/primaryColor" />
+                        android:text="@string/txtNomePreCad"
+                        android:textColor="@color/primaryDarkColor" />
 
                     <EditText
-                        android:id="@+id/editEmailRecuperar"
+                        android:id="@+id/editPrimeiroNome"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginEnd="16dp"
+                        android:ems="10"
 
-                        android:hint="@string/editEmailRecuperarSenha"
-                        android:inputType="textEmailAddress" />
+                        android:hint="@string/editNomePreCad"
+                        android:inputType="textPersonName" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
+                        android:padding="8dp"
+                        android:text="@string/txtSobreNomePreCad"
+                        android:textColor="@color/primaryDarkColor" />
+
+                    <EditText
+                        android:id="@+id/editSobreNome"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:ems="10"
+
+                        android:hint="@string/editSobreNomePreCad"
+                        android:inputType="textPersonName" />
+
+
 
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.cardview.widget.CardView>
-
 
             <!--rodaPe-->
             <androidx.cardview.widget.CardView
@@ -140,35 +165,30 @@
                     android:orientation="vertical">
 
 
-                    <Button
-                        android:id="@+id/btSalvarRecuperarSenha"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btSalvar"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@color/primaryColor"
-                        android:text="@string/btRecupara"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/btSalvarPreCad"
                         android:textColor="@color/colorBranco" />
 
-                    <Button
-                        android:id="@+id/btVoltarRecuperarSenha"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btCancelar"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        app:cornerRadius="5dp"
+                        android:layout_height="55dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
-                        android:background="@color/primaryColor"
-                        android:text="@string/btVoltarRecupara"
+
+                        android:text="@string/btCancelarPreCad"
                         android:textColor="@color/colorBranco"
                         android:layout_marginBottom="16dp" />
-
-
-
-
-
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.cardview.widget.CardView>
 

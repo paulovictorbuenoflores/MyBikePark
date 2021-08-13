@@ -1,0 +1,137 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MeuPerfilFragment">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primaryDarkColor"
+            android:text="Meus Dados"
+            android:textAlignment="center"
+
+            android:textColor="@color/colorWhite"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:background="@color/primaryColor"
+            android:gravity="center"
+            android:text="NOME"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/editPrimeiroNomeMydb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Paulo Victor"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/preto"
+            android:textAlignment="center"
+            android:enabled="false"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@color/primaryColor"
+            android:gravity="center"
+            android:text="SOBRENOME"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/editSobreNomeMydb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:enabled="false"
+            android:textColor="@color/preto"
+            android:textAlignment="center"
+            android:text="Bueno Flores"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@color/primaryColor"
+            android:gravity="center"
+
+            android:text="E-MAIL"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/editEmailMydb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/preto"
+            android:enabled="false"
+            android:textAlignment="center"
+            android:text="paulovictor123@gmail.com"
+            android:inputType="textEmailAddress"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:background="@color/primaryColor"
+            android:gravity="center"
+
+            android:text="SENHA"
+            android:textColor="@color/colorWhite" />
+
+
+        <TextView
+            android:id="@+id/editSenhaMydb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:enabled="false"
+            android:text="maepai$123T"
+            android:inputType="textPassword"
+            android:textColor="@color/preto"
+            android:textSize="18sp" />
+
+
+        <CheckBox
+            android:id="@+id/checkBoxTermoMydb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/gradient"
+            android:enabled="false"
+            android:gravity="left"
+            android:text="@string/chFragmenteTermoMyDB"
+            android:textColor="@color/preto"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

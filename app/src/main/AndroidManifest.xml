@@ -29,7 +29,7 @@
         android:required="false" />
 
     <application
-        android:name=".view.AppApplication"
+        android:name=".NAOSEIPRAQUESERVE.RealmDatabase"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_logo_round"
         android:label="@string/app_name"
@@ -49,27 +49,24 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name=".activities.RecuperarSenhaActivity" />
+        <activity android:name=".activities.CadastroPassoUmActivity" />
+        <activity android:name=".activities.CadastroPassoDoisActivity" />
+        <activity android:name=".activities.LoginUserActivity" />
         <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".view.mapas.MainMapActivity"/>
-        <activity android:name=".view.telaPrincipal.LinhaParque" />
-        <activity android:name=".view.usuario.RecuperarSenhaActivity" />
-        <activity android:name=".view.usuario.CadastroPasso01Ativity" />
-        <activity android:name=".view.usuario.CadastroUsuarioActivity" />
-        <activity android:name=".view.usuario.LoginUserActivity" />
-        <activity
-            android:name=".view.telaPrincipal.MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden" />
-        <activity android:name=".view.SplashActivity">
+            android:windowSoftInputMode="stateHidden">
 
+        </activity>
+        <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

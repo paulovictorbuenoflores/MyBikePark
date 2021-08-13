@@ -96,7 +96,7 @@
     <string name="meu_perfil">Meu Perfil</string>
     <string name="adicionar_novo_cliente">Alterar</string>
     <string name="excluirMenu">Excluir</string>
-<string name="sairMenu">Sair</string>
+    <string name="sairMenu">Sair</string>
 
     <!--tela map-->
     <string name="txt_coordenadas_gps_java">Cordenadas GPS java</string>

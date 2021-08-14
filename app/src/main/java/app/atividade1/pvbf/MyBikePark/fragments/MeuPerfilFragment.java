@@ -49,7 +49,7 @@ public class MeuPerfilFragment extends Fragment {
         String email = sharedPreferences.getString("Email", "dfsd");
         String senha = sharedPreferences.getString("Senha", "pass");
 
-        Toast.makeText(getContext(), "" + email, Toast.LENGTH_LONG).show();
+
 
         UsuarioController usuarioController = new UsuarioController();
         Usuario usuario = usuarioController.buscaEmailSenha(email, senha);

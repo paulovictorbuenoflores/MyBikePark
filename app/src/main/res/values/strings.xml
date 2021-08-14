@@ -67,7 +67,7 @@
     <!--Atualizar meus dados-->
     <string name="txtAtualizarMeusDados">Atualizar Meus Dados</string>
     <string name="txtPrimeiroNomeAtulizarMeusDados">Nome</string>
-    <string name="txtSobreNomeAtulizarMeusDados">Meus Dados</string>
+    <string name="txtSobreNomeAtulizarMeusDados">Sobre Nome</string>
     <string name="editPrimeiroNomeAtualizarMeusDados">Primeiro Nome</string>
     <string name="editSobreNomeAtulizarMeusDados">Sobre Nome</string>
     <string name="btEditarUPDATE">EDITAR</string>

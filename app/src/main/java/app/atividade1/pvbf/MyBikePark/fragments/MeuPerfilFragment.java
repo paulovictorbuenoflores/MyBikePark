@@ -11,8 +11,7 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.AppUtil;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.UsuarioController;
+import app.atividade1.pvbf.MyBikePark.controller.UsuarioController;
 import app.atividade1.pvbf.MyBikePark.R;
 import app.atividade1.pvbf.MyBikePark.model.Usuario;
 
@@ -33,7 +32,7 @@ public class MeuPerfilFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_meu_perfil, container, false);
         iniciarComponentesDeLayout();
-       popularFormulario();
+        popularFormulario();
         return view;
     }
 
@@ -50,17 +49,16 @@ public class MeuPerfilFragment extends Fragment {
         String email = sharedPreferences.getString("Email", "dfsd");
         String senha = sharedPreferences.getString("Senha", "pass");
 
-        Toast.makeText(getContext(), ""+email, Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(), "" + email, Toast.LENGTH_LONG).show();
 
         UsuarioController usuarioController = new UsuarioController();
-        Usuario usuario = usuarioController.buscaEmailSenha(email,senha);
+        Usuario usuario = usuarioController.buscaEmailSenha(email, senha);
         editPrimeiroNomeMydb.setText(usuario.getPrimeiroNome());
         editSobreNomeMydb.setText(usuario.getSobreNome());
         editEmailMydb.setText(usuario.getEmail());
         editSenhaMydb.setText(usuario.getSenha());
         checkBoxTermoMydb.setChecked(true);
     }
-
 
 
 }

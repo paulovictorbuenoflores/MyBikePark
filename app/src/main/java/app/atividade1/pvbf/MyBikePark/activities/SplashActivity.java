@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.AppUtil;
+import app.atividade1.pvbf.MyBikePark.controller.AppUtil;
 
 public class SplashActivity extends AppCompatActivity {
 

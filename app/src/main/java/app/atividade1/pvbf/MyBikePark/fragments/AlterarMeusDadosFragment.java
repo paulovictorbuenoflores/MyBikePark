@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import app.atividade1.pvbf.MyBikePark.model.Usuario;
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.UsuarioController;
+import app.atividade1.pvbf.MyBikePark.controller.UsuarioController;
 
 import static android.content.Context.MODE_PRIVATE;
 

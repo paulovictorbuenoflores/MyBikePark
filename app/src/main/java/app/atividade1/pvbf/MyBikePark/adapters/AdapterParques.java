@@ -1,8 +1,6 @@
 package app.atividade1.pvbf.MyBikePark.adapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +16,9 @@ import java.util.List;
 
 
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.AppUtil;
+import app.atividade1.pvbf.MyBikePark.controller.AppUtil;
 import app.atividade1.pvbf.MyBikePark.fragments.ParquesFragment;
 import app.atividade1.pvbf.MyBikePark.model.Parque;
-import app.atividade1.pvbf.MyBikePark.model.Usuario;
 
 public class AdapterParques extends RecyclerView.Adapter<AdapterParques.ViewHolder> {
     private AdapterParquesListener listener;

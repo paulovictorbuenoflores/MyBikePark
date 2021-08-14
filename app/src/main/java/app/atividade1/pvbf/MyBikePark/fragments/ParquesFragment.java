@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import app.atividade1.pvbf.MyBikePark.R;
 import app.atividade1.pvbf.MyBikePark.adapters.AdapterParques;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.ParqueController;
+import app.atividade1.pvbf.MyBikePark.controller.ParqueController;
 import app.atividade1.pvbf.MyBikePark.adapters.ViewPagerAdapter;
 import app.atividade1.pvbf.MyBikePark.model.Parque;
 

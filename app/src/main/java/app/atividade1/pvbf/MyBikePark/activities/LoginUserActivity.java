@@ -23,14 +23,14 @@ import java.util.List;
 
 import app.atividade1.pvbf.MyBikePark.model.Usuario;
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.AppUtil;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.UsuarioController;
+import app.atividade1.pvbf.MyBikePark.controller.AppUtil;
+import app.atividade1.pvbf.MyBikePark.controller.UsuarioController;
 
 public class LoginUserActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
     EditText editTextEmail, editTextSenha;
-    TextView textViewRecuperarSenha, textViewPolitica, txtSejaVip;
+    TextView textViewRecuperarSenha, textViewPolitica, txtCadastrar;
     CheckBox checkBoxLembrarSenha;
     Button btAcessar;
     ImageView imGLogo;
@@ -46,8 +46,8 @@ public class LoginUserActivity extends AppCompatActivity {
         iniciarViews();
 
         UsuarioController controller = new UsuarioController();
-        List<Usuario> usuarios  = controller.listar();
-
+       // List<Usuario> usuarios  = controller.listar();
+        Usuario usuario =new Usuario();
 
         textViewPolitica.setOnClickListener(view -> new FancyAlertDialog.Builder(LoginUserActivity.this)
                 .setTitle("Política de Privacidade & Termos de Uso")
@@ -71,7 +71,9 @@ public class LoginUserActivity extends AppCompatActivity {
         btAcessar.setOnClickListener(view -> {
             if (isFormulario = validarFormulario()) {
                 salvarSharedPreferences();
-                if (validarDadosDoUsuario(usuarios)) {
+                usuario.setEmail(editTextEmail.getText().toString());
+                usuario.setSenha(editTextSenha.getText().toString());
+                if (validarDadosDoUsuario(usuario)) {
                     Intent intent = new Intent(LoginUserActivity.this, MainActivity.class);
                     Bundle bundle = new Bundle();
                     bundle.putInt("id", getIdUser(editTextEmail.getText().toString(), editTextSenha.getText().toString()));
@@ -83,7 +85,7 @@ public class LoginUserActivity extends AppCompatActivity {
             }
         });
 
-        txtSejaVip.setOnClickListener(view -> {
+        txtCadastrar.setOnClickListener(view -> {
             Intent intent = new Intent(LoginUserActivity.this, CadastroPassoUmActivity.class);
             startActivity(intent);
             finish();
@@ -99,13 +101,14 @@ public class LoginUserActivity extends AppCompatActivity {
         });
     }
 
-    private boolean validarDadosDoUsuario(List<Usuario> usuarios) {
+    private boolean validarDadosDoUsuario(Usuario usuario) {
         boolean retorno = false;
-        for (int i = 0; i < usuarios.size(); i++) {
-            if (UsuarioController.validarDadosDoUsuario(editTextEmail.getText().toString(), AppUtil.gerarMD5Hash(editTextSenha.getText().toString()))) {
+        UsuarioController usuarioController=new UsuarioController();
+
+            if (usuarioController.validarDadosDoUsuario(usuario)) {
              retorno = true;
             }
-        }
+
         return retorno;
     }
 
@@ -132,7 +135,7 @@ public class LoginUserActivity extends AppCompatActivity {
         editTextSenha = findViewById(R.id.editSenhaLoginID);
         checkBoxLembrarSenha = findViewById(R.id.checkBoxLembrarSenhaLogin);
         btAcessar = findViewById(R.id.btAcessarLogin);
-        txtSejaVip = findViewById(R.id.btSejaVipLogin);
+        txtCadastrar = findViewById(R.id.txt_activity_login_user_cadastro);
         imGLogo = findViewById(R.id.imgLogo);
     }
 

@@ -1,4 +1,4 @@
-package app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE;
+package app.atividade1.pvbf.MyBikePark.controller;
 
 import android.util.Log;
 
@@ -37,6 +37,7 @@ public class UsuarioController implements ICrud<Usuario> {
             usuario.setSobreNome(obj.getSobreNome());
             usuario.setEmail(obj.getEmail());
             usuario.setSenha(obj.getSenha());
+            usuario.setImagem(obj.getImagem());
             realm.commitTransaction();
             realm.close();
         }
@@ -79,7 +80,6 @@ public class UsuarioController implements ICrud<Usuario> {
 
     }
 
-
     @Override
     public List<Usuario> listar() {
 
@@ -118,17 +118,7 @@ public class UsuarioController implements ICrud<Usuario> {
         ArrayList<Usuario> clienteLista=new ArrayList<>();
         try{
 
-           /* clienteLista.addAll(listar());
-            for (int i=0; i<clienteLista.size(); i++){
-                if(clienteLista.get(i).getSenha().equals(y)&&clienteLista.get(i).getEmail().equals(x)){
-                    clienteORM=clienteLista.get(i);
-
-                }
-
-            }*/
-
-
-            usuario = realm.copyFromRealm((Objects.requireNonNull(realm.where(Usuario.class)).equalTo("email", email).findFirst()));
+          usuario = realm.copyFromRealm((Objects.requireNonNull(realm.where(Usuario.class)).equalTo("email", email).findFirst()));
 
 
         }catch (Exception e){
@@ -141,12 +131,18 @@ public class UsuarioController implements ICrud<Usuario> {
 
     }
 
+    public  boolean validarDadosDoUsuario(Usuario usuario){
+    List<Usuario> usuarios;
+    usuarios=listar();
+    boolean retorno=false;
+    for (int i=0; i<usuarios.size(); i++){
+        usuario.setSenha(AppUtil.gerarMD5Hash(usuario.getSenha()));
+        if(usuario.getEmail().equals(usuarios.get(i).getEmail())&&usuario.getSenha().equals(usuarios.get(i).getSenha())){
+            retorno= true;
+        }
 
-
-
-
-    public static boolean validarDadosDoUsuario(String email, String senha){
-       return true;
+    }
+       return retorno;
     }
 
 

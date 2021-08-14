@@ -8,16 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.UsuarioController;
+import app.atividade1.pvbf.MyBikePark.controller.UsuarioController;
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.model.Usuario;
 
 
 public class UsuariosFragment extends Fragment {
@@ -40,7 +37,7 @@ public class UsuariosFragment extends Fragment {
         ArrayAdapter<String> clienteAdapter = new ArrayAdapter<>(getContext(),
                 R.layout.item_usuario,
                 R.id.txtItemLista, usuarios);
-
+        listView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
         listView.setAdapter(clienteAdapter);
 
         editPesquisarNome.addTextChangedListener(new TextWatcher() {

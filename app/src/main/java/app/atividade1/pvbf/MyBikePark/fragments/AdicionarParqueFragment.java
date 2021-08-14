@@ -15,14 +15,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.AppUtil;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.ParqueController;
+import app.atividade1.pvbf.MyBikePark.controller.AppUtil;
+import app.atividade1.pvbf.MyBikePark.controller.ParqueController;
 import app.atividade1.pvbf.MyBikePark.activities.MainActivity;
 import app.atividade1.pvbf.MyBikePark.model.Parque;
 
@@ -135,4 +134,5 @@ public class AdicionarParqueFragment extends Fragment {
 
         }
     }
+
 }

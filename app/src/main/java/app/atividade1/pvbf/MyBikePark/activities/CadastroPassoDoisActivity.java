@@ -3,7 +3,6 @@ package app.atividade1.pvbf.MyBikePark.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -20,8 +19,8 @@ import com.shashank.sony.fancydialoglib.Icon;
 
 import app.atividade1.pvbf.MyBikePark.model.Usuario;
 import app.atividade1.pvbf.MyBikePark.R;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.AppUtil;
-import app.atividade1.pvbf.MyBikePark.NAOSEIPRAQUESERVE.UsuarioController;
+import app.atividade1.pvbf.MyBikePark.controller.AppUtil;
+import app.atividade1.pvbf.MyBikePark.controller.UsuarioController;
 
 public class CadastroPassoDoisActivity extends AppCompatActivity {
     EditText editTextNome, editTextEmail, editTextSenha, editTextConfirmarSenha;

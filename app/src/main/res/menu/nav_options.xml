@@ -14,7 +14,7 @@
 
         <item android:id="@+id/menu_nav_adicionar_parque"
             android:icon="@drawable/ic_baseline_import_contacts_24"
-            android:title="Adicionar parque" />
+            android:title="@string/item_nav_options_adicionar_parque" />
 
 
     </group>

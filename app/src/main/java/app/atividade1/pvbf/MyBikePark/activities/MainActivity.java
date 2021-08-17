@@ -1,6 +1,7 @@
 package app.atividade1.pvbf.MyBikePark.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     FragmentManager fragmentManager;
     DrawerLayout drawer;
 
-    private final int GALERIA_IMAGENS=1;
+    private final int GALERIA_IMAGENS = 1;
     Bitmap bitmapGlobal;
     ImageView imageView;
 
@@ -64,12 +65,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-
     public void configToolbarNavigationFABFragment() {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        FloatingActionButton eventoFab = findViewById(R.id.evento_fab);
         drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -78,19 +79,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view);
 
 
-         imageView = navigationView.getHeaderView(0).findViewById(R.id.imgViewUser);
+        imageView = navigationView.getHeaderView(0).findViewById(R.id.imgViewUser);
         TextView txtNomeUserteste = navigationView.getHeaderView(0).findViewById(R.id.txtNomeUserteste);
-        TextView txtSalvarIMG =navigationView.getHeaderView(0).findViewById(R.id.txtNav_header_main_salvar_img);
+        TextView txtSalvarIMG = navigationView.getHeaderView(0).findViewById(R.id.txtNav_header_main_salvar_img);
 
 
-
-        Usuario usuario=new Usuario();
-        UsuarioController usuarioController=new UsuarioController();
-        int id;
-        Bundle bundle = getIntent().getExtras();
-        id = bundle.getInt("id");
+        Usuario usuario = new Usuario();
+        UsuarioController usuarioController = new UsuarioController();
+        int id=1;
+       // Bundle bundle = getIntent().getExtras();
+       // id = bundle.getInt("id");
+        SharedPreferences sharedPreferences = getSharedPreferences(AppUtil.PREF_APP,MODE_PRIVATE);
+        id=sharedPreferences.getInt("id",-1);
         usuario.setId(id);
-        usuario=usuarioController.getById(usuario);
+        usuario = usuarioController.getById(usuario);
         txtNomeUserteste.setText(usuario.getPrimeiroNome());
         Usuario finalUsuario = usuario;
         txtSalvarIMG.setOnClickListener(view -> {
@@ -99,23 +101,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             usuarioController.update(finalUsuario);
             txtSalvarIMG.setText("Imagem Salva");
         });
-        if(usuario.getImagem()!=null){
+        if (usuario.getImagem() != null) {
             imageView.setImageBitmap(AppUtil.getImage(usuario.getImagem()));
         }
         imageView.setOnClickListener(view -> {
-            Intent intent =new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(intent,GALERIA_IMAGENS);
+            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(intent, GALERIA_IMAGENS);
 
-            });
-
-
+        });
 
         navigationView.setNavigationItemSelectedListener(this);
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_fragment, new EventosFragment(MainActivity.this)).commit();
         fab.setOnClickListener(v -> fragmentManager.beginTransaction().replace(R.id.content_fragment, new TodosOsParquesFragment()).commit());
+        eventoFab.setOnClickListener(v -> {
+            startActivity(new Intent(MainActivity.this, AdicionarEventoActivity.class));
+            finish();
+        });
     }
-
 
 
     @Override
@@ -131,8 +134,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id;
         Bundle bundle = getIntent().getExtras();
         id = bundle.getInt("id");
-        UsuarioController usuarioController=new UsuarioController();
-        Usuario usuario =new Usuario();
+        UsuarioController usuarioController = new UsuarioController();
+        Usuario usuario = new Usuario();
         usuario.setId(id);
         switch (item.getItemId()) {
             case R.id.action_perfil:
@@ -219,22 +222,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode,  Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == GALERIA_IMAGENS) {
-            if (resultCode == RESULT_OK && requestCode ==1)  {
+            if (resultCode == RESULT_OK && requestCode == 1) {
                 Uri imagemSelecionada = data.getData();
 
-                String[] colunas ={MediaStore.Images.Media.DATA};
+                String[] colunas = {MediaStore.Images.Media.DATA};
 
-                Cursor cursor = getApplicationContext().getContentResolver().query(imagemSelecionada, colunas,null,null,null);
+                Cursor cursor = getApplicationContext().getContentResolver().query(imagemSelecionada, colunas, null, null, null);
                 cursor.moveToFirst();
                 int indexColuna = cursor.getColumnIndex(colunas[0]);
-                String pathImg =cursor.getString(indexColuna);
+                String pathImg = cursor.getString(indexColuna);
                 cursor.close();
 
-                Bitmap bitmap= BitmapFactory.decodeFile(pathImg);
-                bitmapGlobal=bitmap;
+                Bitmap bitmap = BitmapFactory.decodeFile(pathImg);
+                bitmapGlobal = bitmap;
                 imageView.setImageBitmap(bitmap);
 
             }

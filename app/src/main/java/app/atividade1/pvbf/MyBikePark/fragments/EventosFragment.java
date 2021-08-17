@@ -69,12 +69,6 @@ public class EventosFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.rvEventos);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
-        FloatingActionButton floatingActionButton = view.findViewById(R.id.evento_fab);
-        floatingActionButton.setOnClickListener(view1 -> {
-
-            startActivity(new Intent(getContext(), AdicionarEventoActivity.class));
-            getActivity().finish();
-        });
 
         return view;
     }

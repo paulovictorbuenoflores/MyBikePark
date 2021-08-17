@@ -148,6 +148,7 @@ public class LoginUserActivity extends AppCompatActivity {
         SharedPreferences.Editor dados = preferences.edit();
 
         dados.putBoolean("loginAutomatico", islembrarSenha);
+        dados.putInt("id",getIdUser(editTextEmail.getText().toString(),editTextSenha.getText().toString()));
         dados.putString("Email", editTextEmail.getText().toString());
         dados.putString("Senha", editTextSenha.getText().toString());
 

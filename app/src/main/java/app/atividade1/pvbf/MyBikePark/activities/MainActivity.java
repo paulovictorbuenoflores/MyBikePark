@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-
     public void configToolbarNavigationFABFragment() {
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -72,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FloatingActionButton fab = findViewById(R.id.fab);
         FloatingActionButton eventoFab = findViewById(R.id.evento_fab);
         drawer = findViewById(R.id.drawer_layout);
+        //configura abrir fechar do drawer layout
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Usuario usuario = new Usuario();
         UsuarioController usuarioController = new UsuarioController();
-        int id=1;
+        int id=-1;
        // Bundle bundle = getIntent().getExtras();
        // id = bundle.getInt("id");
         SharedPreferences sharedPreferences = getSharedPreferences(AppUtil.PREF_APP,MODE_PRIVATE);
@@ -119,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             finish();
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -219,7 +218,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Toast.makeText(this, "onBackPressed", Toast.LENGTH_SHORT).show();
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

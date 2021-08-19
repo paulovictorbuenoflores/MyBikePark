@@ -18,7 +18,7 @@ public class RealmDatabase extends Application {
         RealmConfiguration configuration = new RealmConfiguration.Builder()
                 .name(DB_NAME)
                 .schemaVersion(DB_VERSION)
-                .allowWritesOnUiThread(true)//execulta em segundo plano uando precisa
+                .allowWritesOnUiThread(true)//execulta em segundo plano quando precisa
                 .build();
 
         Realm realm = Realm.getInstance(configuration);//nesse momento ele cria um objeto que tem o padrao singleton, não corro o risco de ter dois objetos aberto durante a aplicacoa

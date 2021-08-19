@@ -11,7 +11,9 @@ public class Usuario extends RealmObject implements Serializable {
     private int id;
     @Required
     private String primeiroNome;
-    private  String sobreNome, email, senha;
+    private String sobreNome;
+    private String email;
+    private String senha;
     private byte[] imagem;
     public int getId() {
         return id;

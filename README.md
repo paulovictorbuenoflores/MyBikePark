@@ -10,8 +10,5 @@
 	<h1>Alterando dados do Usuario</h1>
 	<img src="permissoesGif02.gif" width="270" height="480" />
 	
-	
-	
-	
  </div>
 <hr>

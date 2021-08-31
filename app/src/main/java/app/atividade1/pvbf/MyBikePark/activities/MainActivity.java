@@ -33,6 +33,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 import app.atividade1.pvbf.MyBikePark.R;
 import app.atividade1.pvbf.MyBikePark.controller.AppUtil;
+import app.atividade1.pvbf.MyBikePark.controller.ParqueController;
 import app.atividade1.pvbf.MyBikePark.controller.UsuarioController;
 import app.atividade1.pvbf.MyBikePark.fragments.AdicionarParqueFragment;
 import app.atividade1.pvbf.MyBikePark.fragments.AlterarMeusDadosFragment;
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void configToolbarNavigationFABFragment() {
+
+        ParqueController parqueController=new ParqueController();
+        parqueController.addBikeParqueAuto();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

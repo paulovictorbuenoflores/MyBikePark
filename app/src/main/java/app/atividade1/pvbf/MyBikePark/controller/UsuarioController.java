@@ -136,8 +136,8 @@ public class UsuarioController implements ICrud<Usuario> {
     usuarios=listar();
     boolean retorno=false;
     for (int i=0; i<usuarios.size(); i++){
-        usuario.setSenha(AppUtil.gerarMD5Hash(usuario.getSenha()));
-        if(usuario.getEmail().equals(usuarios.get(i).getEmail())&&usuario.getSenha().equals(usuarios.get(i).getSenha())){
+
+        if((usuario.getEmail().equals(usuarios.get(i).getEmail()))&&(usuario.getSenha().equals(usuarios.get(i).getSenha()))){
             retorno= true;
         }
 

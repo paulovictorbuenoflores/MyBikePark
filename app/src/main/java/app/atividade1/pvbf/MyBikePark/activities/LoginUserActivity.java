@@ -70,11 +70,13 @@ public class LoginUserActivity extends AppCompatActivity {
 
         btAcessar.setOnClickListener(view -> {
             if (isFormulario = validarFormulario()) {
-                salvarSharedPreferences();
+
                 usuario.setEmail(editTextEmail.getText().toString());
-                usuario.setSenha(editTextSenha.getText().toString());
+                usuario.setSenha(AppUtil.gerarMD5Hash(editTextSenha.getText().toString()));
+
                 if (validarDadosDoUsuario(usuario)) {
                     Intent intent = new Intent(LoginUserActivity.this, MainActivity.class);
+                    salvarSharedPreferences();
                     Bundle bundle = new Bundle();
                     bundle.putInt("id", getIdUser(editTextEmail.getText().toString(), editTextSenha.getText().toString()));
                     intent.putExtras(bundle);

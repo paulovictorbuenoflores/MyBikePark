@@ -11,7 +11,7 @@
 	<img src="permissoesGif02.gif" width="270" height="480" />
 	</br>
 	<h3>Aplicativo faz uso do realm para mapeamento das classes, salvando no banco de dados mongo, faz uso da API Google Places API.</h3>
-	</br>
+	
 	
  </div>
 <hr>
